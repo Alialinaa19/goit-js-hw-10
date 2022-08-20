@@ -20,7 +20,8 @@ refs.input.addEventListener("input", debounce (e => {
           );
     }
     else if(data.length > 1 || data.length < 9) {
-        insertContent(data)
+       data.map(i =>insertContent(i))
+        
     }
     else {
 
