@@ -1,4 +1,5 @@
 import './css/styles.css';
+import Notiflix from 'notiflix';
 
 const DEBOUNCE_DELAY = 300;
 const refs = {
@@ -13,5 +14,11 @@ function onSearch(e) {
     const countryName = e.currentTarget.value;
     fetch(`https://restcountries.com/v2/name/${countryName}`)
     .then((response) => response.json())
-    .then((data) => console.log(data))
+    .then((data) => {console.log(data)
+    if(data.length > 10) {
+        Notiflix.Notify.failure(
+            "Too many matches found. Please enter a more specific name."
+          );
+    }
+    })
 }
