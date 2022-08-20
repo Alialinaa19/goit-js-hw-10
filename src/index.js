@@ -21,7 +21,14 @@ function onSearch(e) {
           );
     }
     else if(data.length > 1 || data.length < 9) {
-        insertContent(data)
+        // insertContent(data)
+        function createLi(item) {
+            `<li>
+            <img src = "${item.flag}" alt ="flag of ${item.name}" >
+            <p>${item.name}</p>
+            </li>`;
+            console.log(createLi(data))
+            } 
     }
     else {
 
@@ -43,10 +50,12 @@ function createLi(item) {
 <img src = "${item.flag}" alt ="flag of ${item.name}" >
 <p>${item.name}</p>
 </li>`;
+console.log(createLi())
 } 
-function generateContent(array) {array.reduce((acc, item) => acc + createLi(item), "")};
 
-const insertContent = (array) => {
-    const result = generateContent(array);
-    refs.countryList.insertAdjacentHTML("beforeend", result)
-}
+// function generateContent(array) {array.reduce((acc, item) => acc + createLi(item), "")};
+
+// const insertContent = (array) => {
+//     const result = generateContent(array);
+//     refs.countryList.insertAdjacentHTML("beforeend", result)
+// }
