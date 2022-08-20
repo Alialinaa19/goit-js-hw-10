@@ -37,3 +37,16 @@ function onSearch(e) {
     }
     )
 }
+
+function createLi(item) {
+`<li>
+<img src = "${item.flag}" alt ="flag of ${item.name}" >
+<p>${item.name}</p>
+</li>`;
+} 
+function generateContent(array) {array.reduce((acc, item) => acc + createLi(item), "")};
+
+const insertContent = (array) => {
+    const result = generateContent(array);
+    refs.countryList.insertAdjacentHTML("beforeend", result)
+}
