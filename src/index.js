@@ -35,7 +35,7 @@ refs.input.addEventListener("input", debounce (e => {
         
     }
     )
-}, DEBOUNCE_DELAY));
+}, 2000));
 
 // function onSearch(e) {
 //     debounce (e => {
