@@ -8,7 +8,7 @@ const refs = {
     countryList: document.querySelector(".country-list"),
 };
 
-refs.input.addEventListener("submit", onSearch);
+refs.input.addEventListener("input", onSearch);
 
 function onSearch(e) {
     const searchQuery = e.currentTarget.elements.query.value;
