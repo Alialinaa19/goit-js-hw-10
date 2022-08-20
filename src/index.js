@@ -12,5 +12,5 @@ refs.input.addEventListener("input", onSearch);
 
 function onSearch(e) {
     // const searchQuery = e.currentTarget.elements.query.value;
-    console.log(e);
+    console.log(e.data);
 }
