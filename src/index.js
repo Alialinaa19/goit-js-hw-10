@@ -21,7 +21,7 @@ function onSearch(e) {
           );
     }
     else if(data.length > 1 || data.length < 9) {
-
+        insertContent(data)
     }
     else {
 
