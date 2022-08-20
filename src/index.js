@@ -70,10 +70,11 @@ refs.input.addEventListener("input", debounce (e => {
 // }
 
 function createLi(item) {
+    item.map(o =>
 `<li>
-<img src = "${item.flag}" alt ="flag of ${item.name}" >
-<p>${item.name}</p>
-</li>`;
+<img src = "${o.flag}" alt ="flag of ${o.name}" >
+<p>${o.name}</p>
+</li>`)
 } 
 
 function generateContent(array) {array.reduce((acc, item) => acc + createLi(item), "")};
