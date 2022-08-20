@@ -1,5 +1,6 @@
 import './css/styles.css';
 import Notiflix from 'notiflix';
+import debounce from 'lodash.debounce';
 
 const DEBOUNCE_DELAY = 300;
 const refs = {
@@ -11,6 +12,7 @@ const refs = {
 refs.input.addEventListener("input", onSearch);
 
 function onSearch(e) {
+    debounce (e => {
     const countryName = e.currentTarget.value;
     fetch(`https://restcountries.com/v2/name/${countryName}`)
     .then((response) => response.json())
@@ -28,7 +30,7 @@ function onSearch(e) {
     }
     })
     .catch((error) =>{
-        if (error.status = 404) {
+        if (error.status === 404) {
             Notiflix.Notify.failure(
                 "Oops, there is no country with that name"
               );
@@ -36,6 +38,7 @@ function onSearch(e) {
         
     }
     )
+}, DEBOUNCE_DELAY)
 }
 
 function createLi(item) {
