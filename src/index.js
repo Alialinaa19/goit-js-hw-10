@@ -10,7 +10,8 @@ const refs = {
 };
 
 refs.input.addEventListener("input", debounce (e => {
-    const countryName = e.currentTarget.value;
+         cleanHtml();   
+    const countryName = e.currentTarget.value.trim();
     fetch(`https://restcountries.com/v2/name/${countryName}`)
     .then((response) => response.json())
     .then((data) => {console.log(data)
@@ -83,3 +84,8 @@ const insertContent = (array) => {
 const result = generateContent(array);
 refs.countryList.insertAdjacentHTML("beforeend", result)
 }
+
+unction cleanHtml() {
+    countryList.innerHTML = '';
+    countryInfo.innerHTML = '';
+  }
