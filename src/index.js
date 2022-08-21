@@ -73,8 +73,7 @@ const countryInfo = document.querySelector('.country-info');
 const DEBOUNCE_DELAY = 300;
 
 input.addEventListener(
-  'input',
-  debounce(e => {
+  'input', (e => {
       const trimmedValue = input.value.trim();
          cleanHtml();   
     if (trimmedValue !== '') {
@@ -95,8 +94,7 @@ input.addEventListener(
         }
       });
     }
-  }, DEBOUNCE_DELAY)
-);
+  }))
 
 function renderCountryList(countries) {
   const markup = countries
