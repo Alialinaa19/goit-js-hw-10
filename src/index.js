@@ -32,11 +32,10 @@ function onSearch(e) {
     })
     .catch((error) =>{
         console.log(error)
-        if (error) {
-            Notiflix.Notify.failure(
+        
+            Notiflix.Notify.info(
                 "Oops, there is no country with that name"
               );
-        }
         
     }
     )
