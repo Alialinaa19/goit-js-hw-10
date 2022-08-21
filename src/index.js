@@ -14,7 +14,7 @@ refs.input.addEventListener("input", onSearch)
 function onSearch(e) {
     cleanHtml();
     const countryName = e.currentTarget.value.trim();
-    fetch(`https://restcountries.com/v2/name/${countryName}`)
+    fetch(`https://restcountries.com/v3.1/name/${countryName}?fields=,name,capital,population,flags,languages`)
     .then((response) => response.json())
     .then((data) => {
         console.log(data);
