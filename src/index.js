@@ -74,7 +74,7 @@ const DEBOUNCE_DELAY = 300;
 
 input.addEventListener(
     'input',
-    debounce(e => {
+    _.debounce(e => {
         const trimmedValue = input.value.trim();
            cleanHtml();   
       if (trimmedValue !== '') {
