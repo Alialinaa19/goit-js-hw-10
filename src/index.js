@@ -33,8 +33,7 @@ function onSearch(e) {
 }
 })
     .catch((error) =>{
-        console.log(error)
-        
+        console.log(error) 
     }
     )
 }
@@ -54,6 +53,6 @@ refs.countryList.insertAdjacentHTML("beforeend", result)
 }
 
 function cleanHtml() {
-    refs.countryList.innerHTML = 'vddsd';
+    refs.countryList.innerHTML = '';
     refs.countryInfo.innerHTML = '';
   }
