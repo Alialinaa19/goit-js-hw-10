@@ -32,7 +32,7 @@ function onSearch(e) {
     })
     .catch((error) =>{
         console.log(error)
-        if (error.status === 404) {
+        if (error.status === "404") {
             Notiflix.Notify.failure(
                 "Oops, there is no country with that name"
               );
