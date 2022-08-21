@@ -26,7 +26,7 @@ function onSearch(e) {
     else if(data.length > 1 || data.length < 9) {
         insertContent(data)
     }
-    else if (fdata.length === 0) {
+    else if (data.length === 0) {
         Notiflix.Notify.failure('Oops, there is no country with that name');
     else {
 
