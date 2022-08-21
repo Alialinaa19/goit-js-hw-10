@@ -31,7 +31,7 @@ function onSearch(e) {
     }
     })
     .catch((error) =>{
-        console.log(error)
+        console.log(error, "fgfg")
         
             Notiflix.Notify.info(
                 "Oops, there is no country with that name"
