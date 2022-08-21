@@ -12,7 +12,6 @@ const refs = {
 refs.input.addEventListener("input", onSearch)
 
 function onSearch(e) {
-    debounce (e => {
     cleanHtml();
     const countryName = e.currentTarget.value.trim();
     fetch(`https://restcountries.com/v2/name/${countryName}`)
@@ -39,7 +38,6 @@ function onSearch(e) {
         
     }
     )
-}, DEBOUNCE_DELAY)
 }
 
 function createLi(item) {
