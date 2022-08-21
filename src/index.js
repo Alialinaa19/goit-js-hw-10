@@ -88,6 +88,6 @@ refs.countryList.insertAdjacentHTML("beforeend", result)
 }
 
 function cleanHtml() {
-    refs.countryList.innerHTML = '';
+    refs.countryList.innerHTML = 'vddsd';
     refs.countryInfo.innerHTML = '';
   }
