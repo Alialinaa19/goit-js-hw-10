@@ -16,7 +16,8 @@ function onSearch(e) {
     const countryName = e.currentTarget.value.trim();
     fetch(`https://restcountries.com/v2/name/${countryName}`)
     .then((response) => response.json())
-    .then((data) => {console.log(data)
+    .then((data) => {
+        console.log(data);
     if(data.length > 10) {
         Notiflix.Notify.info(
             "Too many matches found. Please enter a more specific name."
@@ -30,6 +31,7 @@ function onSearch(e) {
     }
     })
     .catch((error) =>{
+        console.log(error)
         if (error.status === 404) {
             Notiflix.Notify.failure(
                 "Oops, there is no country with that name"
@@ -41,11 +43,10 @@ function onSearch(e) {
 }
 
 function createLi(item) {
-    item.map(o =>
 `<li>
-<img src = "${o.flag}" alt ="flag of ${o.name}" >
-<p>${o.name}</p>
-</li>`)
+<img src = "${item.flag}" alt ="flag of ${item.name}" >
+<p>${item.name}</p>
+</li>`
 } 
 
 function generateContent(array) {array.reduce((acc, item) => acc + createLi(item), "")};
