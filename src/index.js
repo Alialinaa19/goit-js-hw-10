@@ -9,29 +9,28 @@ const refs = {
     countryList: document.querySelector(".country-list"),
 };
 
-refs.input.addEventListener("input", debounce (e => {
-         cleanHtml();   
+refs.input.addEventListener("input", onSearch)
+
+function onSearch(e) {
+    debounce (e => {
+    cleanHtml();
     const countryName = e.currentTarget.value.trim();
     fetch(`https://restcountries.com/v2/name/${countryName}`)
     .then((response) => response.json())
-    .then((data) => {
-        console.log(data, "dsbgfbgd")
+    .then((data) => {console.log(data)
     if(data.length > 10) {
         Notiflix.Notify.info(
             "Too many matches found. Please enter a more specific name."
           );
     }
-
     else if(data.length > 1 || data.length < 9) {
-       insertContent(data)
-        
+        insertContent(data)
     }
     else {
 
     }
     })
     .catch((error) =>{
-        console.log(error, "huhu")
         if (error.status === 404) {
             Notiflix.Notify.failure(
                 "Oops, there is no country with that name"
@@ -40,37 +39,8 @@ refs.input.addEventListener("input", debounce (e => {
         
     }
     )
-}, 3000));
-
-// function onSearch(e) {
-//     debounce (e => {
-//     const countryName = e.currentTarget.value;
-//     fetch(`https://restcountries.com/v2/name/${countryName}`)
-//     .then((response) => response.json())
-//     .then((data) => {console.log(data)
-//     if(data.length > 10) {
-//         Notiflix.Notify.info(
-//             "Too many matches found. Please enter a more specific name."
-//           );
-//     }
-//     else if(data.length > 1 || data.length < 9) {
-//         insertContent(data)
-//     }
-//     else {
-
-//     }
-//     })
-//     .catch((error) =>{
-//         if (error.status === 404) {
-//             Notiflix.Notify.failure(
-//                 "Oops, there is no country with that name"
-//               );
-//         }
-        
-//     }
-//     )
-// }, DEBOUNCE_DELAY)
-// }
+}, DEBOUNCE_DELAY)
+}
 
 function createLi(item) {
     item.map(o =>
