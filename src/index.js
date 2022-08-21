@@ -15,12 +15,13 @@ refs.input.addEventListener("input", debounce (e => {
     fetch(`https://restcountries.com/v2/name/${countryName}`)
     .then((response) => response.json())
     .then((data) => {
-        console.log(data, "dsd")
+        console.log(data, "dsbgfbgd")
     if(data.length > 10) {
         Notiflix.Notify.info(
             "Too many matches found. Please enter a more specific name."
           );
     }
+
     else if(data.length > 1 || data.length < 9) {
        insertContent(data)
         
