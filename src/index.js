@@ -27,11 +27,11 @@ function onSearch(e) {
         insertContent(data)
     }
     else if (data.length === 0) {
-        Notiflix.Notify.failure('Oops, there is no country with that name');
+        Notiflix.Notify.failure('Oops, there is no country with that name');}
     else {
 
-    }
-    })
+}
+})
     .catch((error) =>{
         console.log(error)
         
