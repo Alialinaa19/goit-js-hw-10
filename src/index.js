@@ -87,6 +87,6 @@ refs.countryList.insertAdjacentHTML("beforeend", result)
 }
 
 function cleanHtml() {
-    countryList.innerHTML = '';
-    countryInfo.innerHTML = '';
+    refs.countryList.innerHTML = '';
+    refs.countryInfo.innerHTML = '';
   }
