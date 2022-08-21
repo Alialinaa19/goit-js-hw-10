@@ -64,7 +64,7 @@
 //   }
 import './css/styles.css';
 import { fetchCountries } from './js/fetchCountries';
-import debounce from 'lodash.debounce';
+// import debounce from 'lodash.debounce';
 import Notiflix from 'notiflix';
 
 const input = document.querySelector('#search-box');
@@ -133,4 +133,3 @@ function cleanHtml() {
   countryList.innerHTML = '';
   countryInfo.innerHTML = '';
 }
-Footer
