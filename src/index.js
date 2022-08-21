@@ -14,7 +14,8 @@ refs.input.addEventListener("input", debounce (e => {
     const countryName = e.currentTarget.value.trim();
     fetch(`https://restcountries.com/v2/name/${countryName}`)
     .then((response) => response.json())
-    .then((data) => {console.log(data)
+    .then((data) => {
+        console.log(data, "dsd")
     if(data.length > 10) {
         Notiflix.Notify.info(
             "Too many matches found. Please enter a more specific name."
@@ -29,7 +30,7 @@ refs.input.addEventListener("input", debounce (e => {
     }
     })
     .catch((error) =>{
-        console.log(error.status)
+        console.log(error, huhu)
         if (error.status === 404) {
             Notiflix.Notify.failure(
                 "Oops, there is no country with that name"
@@ -38,7 +39,7 @@ refs.input.addEventListener("input", debounce (e => {
         
     }
     )
-}, 2000));
+}, 3000));
 
 // function onSearch(e) {
 //     debounce (e => {
@@ -85,7 +86,7 @@ const result = generateContent(array);
 refs.countryList.insertAdjacentHTML("beforeend", result)
 }
 
-unction cleanHtml() {
+function cleanHtml() {
     countryList.innerHTML = '';
     countryInfo.innerHTML = '';
   }
