@@ -82,7 +82,7 @@ input.addEventListener(
   
           if (foundData.length > 10) {
             Notiflix.Notify.info(
-              'Too many matches found. Please enter a more specific name.'
+              'Too many matches found. Please enter more specific name.'
             );
           } else if (foundData.length === 0) {
             Notiflix.Notify.failure('Oops, there is no country with that name');
