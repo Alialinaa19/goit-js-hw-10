@@ -30,7 +30,7 @@ refs.input.addEventListener("input", debounce (e => {
     }
     })
     .catch((error) =>{
-        console.log(error, huhu)
+        console.log(error, "huhu")
         if (error.status === 404) {
             Notiflix.Notify.failure(
                 "Oops, there is no country with that name"
