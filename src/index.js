@@ -64,7 +64,7 @@
 //   }
 import './css/styles.css';
 import { fetchCountries } from './js/fetchCountries';
-import debounce from 'lodash.debounce';
+import debounce from 'lodash.fp.debounce';
 import Notiflix from 'notiflix';
 
 const input = document.querySelector('#search-box');
@@ -74,7 +74,7 @@ const DEBOUNCE_DELAY = 300;
 
 input.addEventListener(
     'input',
-    _.debounce(e => {
+    debounce(e => {
         const trimmedValue = input.value.trim();
            cleanHtml();   
       if (trimmedValue !== '') {
